@@ -1,6 +1,6 @@
 CREATE TYPE programming_language AS ENUM ('Python', 'Node.js', 'React.js', 'Typescript', 'JavaScript');
 CREATE TYPE status AS ENUM ('Pending', 'In-Progress', 'Submitted');
-
+-- enum is good, if we want to add any values for the column it will be easy.
 CREATE TABLE ASSESSMENTS (
     ID UUID PRIMARY KEY DEFAULT uuid_generate_v4 (),
     NAME TEXT NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE ASSESSMENTS (
     HIDDEN_TEST_CASES_LINK TEXT,
     LANGUAGE programming_language,
     DESCRIPTION TEXT NOT NULL,
-    RESULTS JSONB
+    META_DATA JSONB
 );
 
 CREATE TABLE CANDIDATES (
@@ -38,7 +38,7 @@ CREATE TABLE CANDIDATE_ASSESSMENT (
     TOTAL_TESTCASES INT NOT NULL,
     PASSED_TESTCASES INT NOT NULL,
     FAILED_TESTCASES INT NOT NULL,
-    META_DATA JSONB
+    RESULTS JSONB -- result-score, result-summary
 );   
 
 
