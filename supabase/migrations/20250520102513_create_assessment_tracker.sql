@@ -1,5 +1,5 @@
 CREATE TYPE programming_language AS ENUM ('Python', 'Node.js', 'React.js', 'Typescript', 'JavaScript');
-CREATE TYPE status AS ENUM ('Pending', 'In-Progress', 'Submitted');
+CREATE TYPE status AS ENUM ('Invited', 'In-Progress', 'Submitted');
 -- enum is good, if we want to add any values for the column it will be easy.
 CREATE TABLE ASSESSMENTS (
     ID UUID PRIMARY KEY DEFAULT uuid_generate_v4 (),
